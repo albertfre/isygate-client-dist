@@ -13,9 +13,9 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <javafx.version>21.0.8</javafx.version>
 
-        <!-- FXLauncher config -->
+        <!-- === FXLauncher config === -->
         <app.mainClass>it.isygate.client.ClientApp</app.mainClass>
-        <app.url>https://github.com/albertfre/isygate-client-dist/releases/download/${{ github.ref_name }}/</app.url>
+        <app.url>https://github.com/albertfre/isygate-client-dist/releases/download/v1.0.1/</app.url>
         <app.dir>${project.build.directory}/app</app.dir>
     </properties>
 
@@ -45,7 +45,6 @@
             <artifactId>richtextfx</artifactId>
             <version>0.11.1</version>
         </dependency>
-
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -81,7 +80,7 @@
 
         <plugins>
 
-            <!-- Crea la directory target/app -->
+            <!-- 0️⃣  Crea la cartella target/app -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
@@ -95,14 +94,14 @@
                         </goals>
                         <configuration>
                             <target>
-                                <mkdir dir="${app.dir}" />
+                                <mkdir dir="${app.dir}"/>
                             </target>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
 
-            <!-- JLINK: crea runtime personalizzata -->
+            <!-- 1️⃣  Crea runtime Java personalizzata -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -110,7 +109,7 @@
                 <executions>
                     <execution>
                         <id>run-jlink</id>
-                        <phase>package</phase>
+                        <phase>prepare-package</phase>
                         <goals>
                             <goal>exec</goal>
                         </goals>
@@ -118,14 +117,11 @@
                             <executable>jlink</executable>
                             <arguments>
                                 <argument>--module-path</argument>
-                                <argument>"${java.home}/jmods;${project.basedir}/lib/javafx-jmods-21.0.8"</argument>
-
+                                <argument>${java.home}/jmods;${project.basedir}/lib/javafx-jmods-21.0.8</argument>
                                 <argument>--add-modules</argument>
                                 <argument>java.base,java.desktop,java.logging,java.sql,java.xml,javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web</argument>
-
                                 <argument>--output</argument>
                                 <argument>${project.build.directory}/runtime</argument>
-
                                 <argument>--strip-debug</argument>
                                 <argument>--no-header-files</argument>
                                 <argument>--no-man-pages</argument>
@@ -137,14 +133,14 @@
                 </executions>
             </plugin>
 
-            <!-- Copia dipendenze + app + fxlauncher -->
+            <!-- 2️⃣  Copia dipendenze, jar principale e fxlauncher.jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>3.6.1</version>
                 <executions>
                     <execution>
-                        <id>copy-runtime-deps</id>
+                        <id>copy-deps</id>
                         <phase>package</phase>
                         <goals>
                             <goal>copy-dependencies</goal>
@@ -181,16 +177,17 @@
                 </executions>
             </plugin>
 
-            <!-- Crea e incorpora manifest FXLauncher -->
+            <!-- 3️⃣  Crea app.xml e incorporalo in fxlauncher.jar -->
+    
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.3.0</version>
                 <executions>
-                    <!-- 2) Crea app.xml (manifest FXLauncher) -->
+                    <!-- 1️⃣ Crea app.xml (manifest FXLauncher) -->
                     <execution>
                         <id>create-fxlauncher-manifest</id>
-                        <phase>verify</phase>                        <!-- prima era package -->
+                        <phase>package</phase>
                         <goals>
                             <goal>java</goal>
                         </goals>
@@ -205,10 +202,11 @@
                         </configuration>
                     </execution>
 
-                    <!-- 3) Incorpora app.xml dentro fxlauncher.jar -->
+                    <!-- 2️⃣ Incorpora app.xml dentro fxlauncher.jar -->
                     <execution>
                         <id>embed-appxml-into-launcher</id>
-                        <phase>verify</phase>                        <!-- spostato dopo che fxlauncher.jar è stato copiato -->
+                        <!-- 👇 Spostata a una fase più tardi -->
+                        <phase>install</phase>
                         <goals>
                             <goal>exec</goal>
                         </goals>
@@ -225,14 +223,15 @@
                 </executions>
             </plugin>
 
-            <!-- Crea MSI con jpackage -->
+            <!-- 4️⃣  Crea il file MSI -->
+
             <plugin>
                 <groupId>org.panteleyev</groupId>
                 <artifactId>jpackage-maven-plugin</artifactId>
                 <version>1.7.1</version>
                 <executions>
                     <execution>
-                        <id>build-msi-launcher</id>
+                        <id>build-msi</id>
                         <phase>package</phase>
                         <goals>
                             <goal>jpackage</goal>
@@ -251,16 +250,12 @@
                             <winShortcut>true</winShortcut>
                             <winUpgradeUuid>123e4567-e89b-12d3-a456-426614174000</winUpgradeUuid>
                             <runtimeImage>${project.build.directory}/runtime</runtimeImage>
-                            <javaOptions>
-                                <option>--add-exports=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED</option>
-                                <option>--add-opens=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED</option>
-                            </javaOptions>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
 
-            <!-- Clean robusto -->
+            <!-- 5️⃣  Clean -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
