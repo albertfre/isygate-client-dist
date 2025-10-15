@@ -1,0 +1,56 @@
+name: Build & Publish MSI Release
+
+on:
+  push:
+    tags:
+      - 'v*'   # Ogni volta che pushi un tag v1.1.0, v1.2.0 ecc.
+
+jobs:
+  build-msi:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Temurin JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+
+      - name: Install WiX Toolset (per creare MSI)
+        run: choco install wixtoolset --yes
+
+      - name: Build progetto e generazione runtime + manifest
+        run: |
+          mvn -B clean package -DskipTests
+          echo "[INFO] Creazione manifest FXLauncher"
+          mvn -B exec:java -Dexec.mainClass=fxlauncher.CreateManifest -Dexec.args="https://github.com/albertfre/isygate-client-dist/releases/download/${{ github.ref_name }}/ it.isygate.client.ClientApp target/app"
+          mvn -B verify -DskipTests
+          mvn -B clean package -DskipTests
+
+      - name: Mostra risultati build
+        run: dir target
+
+      - name: Crea e pubblica release automatica
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: IsyGate Client ${{ github.ref_name }}
+          body: |
+            Build automatica IsyGate Client ${{ github.ref_name }}
+
+            - Auto-generato da GitHub Actions
+            - Include MSI e pacchetto FXLauncher completo
+          files: |
+            target/IsyGateClient-*.msi
+            target/app/**
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fine
+        run: echo "✅ Build e release completata con successo!"
