@@ -1,0 +1,62 @@
+/* ---------- Vital bars: base polishing ---------- */
+.progress-bar {
+  -fx-background-radius: 14px;
+  -fx-border-radius: 14px;
+}
+
+/* Pista (track) più pulita di base */
+.progress-bar .track {
+  -fx-background-color: linear-gradient(to bottom, rgba(30,30,30,0.9), rgba(18,18,18,0.9));
+  -fx-background-insets: 0;
+  -fx-background-radius: 14px;
+}
+
+/* Barra (riempimento) base con leggero glossy */
+.progress-bar .bar {
+  -fx-background-insets: 0;
+  -fx-background-radius: 12px;
+  -fx-effect: innershadow(gaussian, rgba(0,0,0,0.55), 8, 0.35, 0, 1);
+}
+
+/* ---------- IMMORTALE: effetto ghiaccio “frosted + glow” ---------- */
+.progress-bar.frozen .track {
+  -fx-background-color: linear-gradient(to bottom, rgba(205,235,255,0.28), rgba(175,215,255,0.18));
+  -fx-background-insets: 0;
+  -fx-effect: dropshadow(gaussian, rgba(120,200,255,0.25), 12, 0.4, 0, 0);
+}
+
+.progress-bar.frozen .bar {
+  /* cristallo azzurro */
+  -fx-background-color:
+    linear-gradient(to bottom, rgba(190,230,255,0.95), rgba(135,195,255,0.95)),
+    linear-gradient(to bottom, rgba(255,255,255,0.65), rgba(255,255,255,0.10));
+  -fx-background-insets: 0, 0;
+  -fx-background-radius: 12px;
+  /* riflessi interni come brina */
+  -fx-effect:
+    innershadow(gaussian, rgba(160,210,255,0.95), 16, 0.7, 0, 0),
+    dropshadow(gaussian, rgba(120,190,255,0.45), 10, 0.5, 0, 0);
+}
+
+/* percentuali leggibili sopra il ghiaccio */
+.progress-bar.frozen .bar .text, 
+.progress-bar.frozen .percentage {
+  -fx-fill: #083b5c;
+  -fx-font-weight: bold;
+}
+
+/* ---------- Badge IMMORTALE più carino ---------- */
+.label.immortal-badge {
+  -fx-text-fill: #bfe6ff;
+  -fx-font-weight: bold;
+  -fx-background-color:
+     linear-gradient(to bottom, rgba(15,35,60,0.9), rgba(10,25,45,0.9)),
+     linear-gradient(to bottom, rgba(120,200,255,0.25), rgba(120,200,255,0.05));
+  -fx-background-radius: 10;
+  -fx-padding: 4 10 4 10;
+  -fx-effect:
+     dropshadow(gaussian, rgba(120,200,255,0.65), 12, 0.6, 0, 0);
+  -fx-border-color: rgba(160,220,255,0.55);
+  -fx-border-radius: 10;
+  -fx-border-width: 1;
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Application ts="1760569526608" uri="https://github.com/albertfre/isygate-client-dist/releases/latest/download/" launch="it.isygate.client.ClientApp">
+    <lib file="flowless-0.7.1.jar" checksum="784499484" size="71739"/>
+    <lib file="gson-2.10.1.jar" checksum="2443087603" size="283367"/>
+    <lib file="istack-commons-runtime-3.0.11.jar" checksum="311692892" size="29877"/>
+    <lib file="isygate-client-1.0.0.jar" checksum="112588132" size="1299696"/>
+    <lib file="jakarta.activation-1.2.2.jar" checksum="2299001371" size="68453"/>
+    <lib file="jakarta.xml.bind-api-2.3.3.jar" checksum="1057609445" size="115638"/>
+    <lib file="javafx-base-21.0.8-win.jar" checksum="2152312484" size="753858" os="win"/>
+    <lib file="javafx-base-21.0.8.jar" checksum="800016552" size="302"/>
+    <lib file="javafx-controls-21.0.8-win.jar" checksum="3563404825" size="2585171" os="win"/>
+    <lib file="javafx-controls-21.0.8.jar" checksum="3776400356" size="306"/>
+    <lib file="javafx-fxml-21.0.8-win.jar" checksum="1829548998" size="130177" os="win"/>
+    <lib file="javafx-fxml-21.0.8.jar" checksum="1998931842" size="302"/>
+    <lib file="javafx-graphics-21.0.8-win.jar" checksum="10328786" size="5942320" os="win"/>
+    <lib file="javafx-graphics-21.0.8.jar" checksum="1256934130" size="306"/>
+    <lib file="javax.activation-api-1.2.0.jar" checksum="2667705638" size="56674"/>
+    <lib file="jaxb-api-2.3.1.jar" checksum="1861043666" size="128076"/>
+    <lib file="jaxb-runtime-2.3.3.jar" checksum="3063058035" size="1035660"/>
+    <lib file="reactfx-2.0-M5.jar" checksum="1171558602" size="428541"/>
+    <lib file="richtextfx-0.11.1.jar" checksum="2979361591" size="292108"/>
+    <lib file="txw2-2.3.3.jar" checksum="1800056786" size="71976"/>
+    <lib file="undofx-2.1.1.jar" checksum="2665914013" size="27946"/>
+    <lib file="wellbehavedfx-0.3.3.jar" checksum="1490410424" size="60297"/>
+    <updateText>Updating...</updateText>
+    <updateLabelStyle>-fx-font-weight: BOLD;</updateLabelStyle>
+    <progressLabelStyle>-fx-font-weight: NORMAL;</progressLabelStyle>
+    <progressBarStyle>-fx-pref-width: 380; -fx-accent: #2f2f2f;</progressBarStyle>
+    <wrapperStyle>-fx-spacing: 5px; -fx-padding: 5px; -fx-border-color: transparent; -fx-background-color: #F5F5F5; -fx-background-radius: 3px; -fx-border-radius: 3px;</wrapperStyle>
+    <acceptDowngrade>false</acceptDowngrade>
+    <stopOnUpdateErrors>false</stopOnUpdateErrors>
+    <lingeringUpdateScreen>false</lingeringUpdateScreen>
+</Application>

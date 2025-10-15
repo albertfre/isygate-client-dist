@@ -1,0 +1,275 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>it.isygate</groupId>
+    <artifactId>isygate-client</artifactId>
+    <version>1.0.1</version>
+    <name>IsyGate Client</name>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <javafx.version>21.0.8</javafx.version>
+
+        <!-- FXLauncher config -->
+        <app.mainClass>it.isygate.client.ClientApp</app.mainClass>
+        <app.url>https://github.com/albertfre/isygate-client-dist/releases/download/${{ github.ref_name }}/</app.url>
+        <app.dir>${project.build.directory}/app</app.dir>
+    </properties>
+
+    <dependencies>
+        <!-- JavaFX -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+
+        <!-- FXLauncher -->
+        <dependency>
+            <groupId>io.github.finsther</groupId>
+            <artifactId>fxlauncher</artifactId>
+            <version>1.0.22</version>
+        </dependency>
+
+        <!-- Utility -->
+        <dependency>
+            <groupId>org.fxmisc.richtext</groupId>
+            <artifactId>richtextfx</artifactId>
+            <version>0.11.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+
+        <!-- JAXB -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.gif</include>
+                    <include>**/*.png</include>
+                    <include>**/*.jpg</include>
+                    <include>**/*.css</include>
+                    <include>**/*.json</include>
+                </includes>
+            </resource>
+        </resources>
+
+        <plugins>
+
+            <!-- Crea la directory target/app -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>mkdir-app-dir</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <mkdir dir="${app.dir}" />
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- JLINK: crea runtime personalizzata -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <id>run-jlink</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>jlink</executable>
+                            <arguments>
+                                <argument>--module-path</argument>
+                                <argument>"${java.home}/jmods;${project.basedir}/lib/javafx-jmods-21.0.8"</argument>
+
+                                <argument>--add-modules</argument>
+                                <argument>java.base,java.desktop,java.logging,java.sql,java.xml,javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web</argument>
+
+                                <argument>--output</argument>
+                                <argument>${project.build.directory}/runtime</argument>
+
+                                <argument>--strip-debug</argument>
+                                <argument>--no-header-files</argument>
+                                <argument>--no-man-pages</argument>
+                                <argument>--compress</argument>
+                                <argument>2</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Copia dipendenze + app + fxlauncher -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.6.1</version>
+                <executions>
+                    <execution>
+                        <id>copy-runtime-deps</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${app.dir}</outputDirectory>
+                            <includeScope>runtime</includeScope>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-main-and-launcher</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>${project.artifactId}</artifactId>
+                                    <version>${project.version}</version>
+                                    <outputDirectory>${app.dir}</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>io.github.finsther</groupId>
+                                    <artifactId>fxlauncher</artifactId>
+                                    <version>1.0.22</version>
+                                    <outputDirectory>${app.dir}</outputDirectory>
+                                    <destFileName>fxlauncher.jar</destFileName>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Crea e incorpora manifest FXLauncher -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <!-- 2) Crea app.xml (manifest FXLauncher) -->
+                    <execution>
+                        <id>create-fxlauncher-manifest</id>
+                        <phase>verify</phase>                        <!-- prima era package -->
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <classpathScope>runtime</classpathScope>
+                            <mainClass>fxlauncher.CreateManifest</mainClass>
+                            <arguments>
+                                <argument>${app.url}</argument>
+                                <argument>${app.mainClass}</argument>
+                                <argument>${app.dir}</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+
+                    <!-- 3) Incorpora app.xml dentro fxlauncher.jar -->
+                    <execution>
+                        <id>embed-appxml-into-launcher</id>
+                        <phase>verify</phase>                        <!-- spostato dopo che fxlauncher.jar è stato copiato -->
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>jar</executable>
+                            <workingDirectory>${app.dir}</workingDirectory>
+                            <arguments>
+                                <argument>uf</argument>
+                                <argument>fxlauncher.jar</argument>
+                                <argument>app.xml</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Crea MSI con jpackage -->
+            <plugin>
+                <groupId>org.panteleyev</groupId>
+                <artifactId>jpackage-maven-plugin</artifactId>
+                <version>1.7.1</version>
+                <executions>
+                    <execution>
+                        <id>build-msi-launcher</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jpackage</goal>
+                        </goals>
+                        <configuration>
+                            <name>IsyGateClient</name>
+                            <type>MSI</type>
+                            <destination>${project.build.directory}</destination>
+                            <input>${app.dir}</input>
+                            <mainJar>fxlauncher.jar</mainJar>
+                            <mainClass>fxlauncher.Launcher</mainClass>
+                            <appVersion>${project.version}</appVersion>
+                            <vendor>IsyGate Studios</vendor>
+                            <icon>${project.basedir}/icon.ico</icon>
+                            <winMenu>true</winMenu>
+                            <winShortcut>true</winShortcut>
+                            <winUpgradeUuid>123e4567-e89b-12d3-a456-426614174000</winUpgradeUuid>
+                            <runtimeImage>${project.build.directory}/runtime</runtimeImage>
+                            <javaOptions>
+                                <option>--add-exports=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED</option>
+                                <option>--add-opens=javafx.graphics/com.sun.javafx.application=ALL-UNNAMED</option>
+                            </javaOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Clean robusto -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.3.2</version>
+                <configuration>
+                    <failOnError>false</failOnError>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,24 @@
+/* colore di base */
+.col-default   { -fx-fill: #e0e0c0; }
+
+/* ANSI usati */
+.col-gold      { -fx-fill: gold; }
+.col-red       { -fx-fill: red; }
+.col-lime      { -fx-fill: #32cd32; }   /* LIMEGREEN */
+.col-cyan      { -fx-fill: cyan; }
+
+/* palette stile Minecraft */
+.col-black     { -fx-fill: #000000; }
+.col-darkblue  { -fx-fill: #0000aa; }
+.col-darkgreen { -fx-fill: #00aa00; }
+.col-darkcyan  { -fx-fill: #00aaaa; }
+.col-darkred   { -fx-fill: #aa0000; }
+.col-darkmagenta { -fx-fill: #aa00aa; }
+.col-gold      { -fx-fill: #ffaa00; }   /* più “dorato” */
+.col-lightgray { -fx-fill: #aaaaaa; }
+.col-darkgray  { -fx-fill: #555555; }
+.col-blue      { -fx-fill: #5555ff; }
+.col-magenta   { -fx-fill: #ff55ff; }
+.col-yellow    { -fx-fill: #ffff55; }
+.col-white     { -fx-fill: #ffffff; }
+.col-lilla     { -fx-fill: #a68bd0; /* lilla tenue */ }

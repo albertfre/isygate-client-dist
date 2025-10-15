@@ -1,0 +1,237 @@
+{
+  "contexts": {
+    "overworld": "/maps/icons/",
+    "city": "/maps/client/",
+    "dungeon": "/maps/client/"
+  },
+  "aliases": {
+    "121": "109",
+    "122": "34",
+    "134": "940",
+    "11": "11",
+    "17": "17"
+  },
+  "tiles": {
+    "0": {
+      "file": {
+        "overworld": "0.gif",
+        "city": "90.gif",
+        "dungeon": "90.gif"
+      },
+      "collidable": true,
+      "z": 0,
+      "floor": 0,
+      "visibility": "floor"
+    },
+    "34": "w122.gif",
+    "109": "w121.gif",
+    "940": "940.gif",
+    "11": "w031.gif",
+    "17": "w041.gif",
+
+    "900": {
+      "file": { "city": "0Y.gif" },
+      "collidable": false,
+      "z": 0,
+      "floor": 0,
+      "visibility": "floor",
+      "viewport": { "x": 26, "y": 26, "w": 19, "h": 19 }
+    },
+
+    "910": {
+      "file": {
+        "city": "wall_brick.gif",
+        "dungeon": "wall_brick.gif"
+      },
+      "collidable": true,
+      "z": 10,
+      "floor": 0,
+      "visibility": "wall",
+      "viewport": { "x": 0, "y": 0, "w": 19, "h": 19 }
+    },
+
+    "_comment": "Archi da qui in poi",
+    "911": {
+      "file": {
+        "city": "0archn.gif",
+        "dungeon": "0archn.gif"
+      },
+      "collidable": false,
+      "z": 10,
+      "floor": 0,
+      "visibility": "window",
+      "viewport": { "x": 13, "y": 0, "w": 19, "h": 13 }
+    },
+    "914": {
+      "file": {
+        "city": "0archs.gif",
+        "dungeon": "0archs.gif"
+      },
+      "collidable": false,
+      "z": 10,
+      "floor": 0,
+      "visibility": "window",
+      "viewport": { "x": 13, "y": 32, "w": 19, "h": 13 }
+    },
+    "913": {
+      "file": {
+        "city": "0arche.gif",
+        "dungeon": "0arche.gif"
+      },
+      "collidable": false,
+      "z": 10,
+      "floor": 0,
+      "visibility": "window",
+      "viewport": { "x": 32, "y": 13, "w": 13, "h": 19 }
+    },
+    "912": {
+      "file": {
+        "city": "0archw.gif",
+        "dungeon": "0archw.gif"
+      },
+      "collidable": false,
+      "z": 10,
+      "floor": 0,
+      "visibility": "window",
+      "viewport": { "x": 0, "y": 13, "w": 13, "h": 19 }
+    },
+
+    "_comment2": "Porte da qui in poi",
+    "915": {
+      "file": {
+        "city": "0closdoorn.gif",
+        "dungeon": "0closdoorn.gif"
+      },
+      "collidable": true,
+      "z": 10,
+      "floor": 0,
+      "visibility": "door",
+      "viewport": { "x": 13, "y": 0, "w": 19, "h": 13 }
+    },
+    "916": {
+      "file": {
+        "city": "0closdoors.gif",
+        "dungeon": "0closdoors.gif"
+      },
+      "collidable": true,
+      "z": 10,
+      "floor": 0,
+      "visibility": "door",
+      "viewport": { "x": 13, "y": 32, "w": 19, "h": 13 }
+    },
+    "917": {
+      "file": {
+        "city": "0closdoore.gif",
+        "dungeon": "0closdoore.gif"
+      },
+      "collidable": true,
+      "z": 10,
+      "floor": 0,
+      "visibility": "door",
+      "viewport": { "x": 13, "y": 32, "w": 19, "h": 13 }
+    },
+    "918": {
+      "file": {
+        "city": "0closdoorw.gif",
+        "dungeon": "0closdoorw.gif"
+      },
+      "collidable": true,
+      "z": 10,
+      "floor": 0,
+      "visibility": "door",
+      "viewport": { "x": 0, "y": 13, "w": 13, "h": 19 }
+    },
+
+    "_comment3": "Porte aperte da qui in poi",
+    "919": {
+      "file": {
+        "city": "0opendoorn.gif",
+        "dungeon": "0opendoorn.gif"
+      },
+      "collidable": false,
+      "z": 10,
+      "floor": 0,
+      "visibility": "door",
+      "viewport": { "x": 13, "y": 0, "w": 19, "h": 13 }
+    },
+    "920": {
+      "file": {
+        "city": "0opendoors.gif",
+        "dungeon": "0opendoors.gif"
+      },
+      "collidable": false,
+      "z": 10,
+      "floor": 0,
+      "visibility": "door",
+      "viewport": { "x": 13, "y": 32, "w": 19, "h": 13 }
+    },
+    "921": {
+      "file": {
+        "city": "0opendoore.gif",
+        "dungeon": "0opendoore.gif"
+      },
+      "collidable": false,
+      "z": 10,
+      "floor": 0,
+      "visibility": "door",
+      "viewport": { "x": 13, "y": 32, "w": 19, "h": 13 }
+    },
+    "922": {
+      "file": {
+        "city": "0opendoorw.gif",
+        "dungeon": "0opendoorw.gif"
+      },
+      "collidable": false,
+      "z": 10,
+      "floor": 0,
+      "visibility": "door",
+      "viewport": { "x": 0, "y": 13, "w": 13, "h": 19 }
+    },
+
+    "_comment4": "muri di marmo",
+    "923": {
+      "file": {
+        "city": "0wallen.gif",
+        "dungeon": "0wallen.gif"
+      },
+      "collidable": true,
+      "z": 10,
+      "floor": 0,
+      "visibility": "wall",
+      "viewport": { "x": 13, "y": 0, "w": 19, "h": 13 }
+    },
+    "924": {
+      "file": {
+        "city": "0wallens.gif",
+        "dungeon": "0wallens.gif"
+      },
+      "collidable": true,
+      "z": 10,
+      "floor": 0,
+      "visibility": "wall",
+      "viewport": { "x": 13, "y": 32, "w": 19, "h": 13 }
+    },
+    "925": {
+      "file": {
+        "city": "0wallene.gif",
+        "dungeon": "0wallene.gif"
+      },
+      "collidable": true,
+      "z": 10,
+      "floor": 0,
+      "visibility": "wall",
+      "viewport": { "x": 13, "y": 32, "w": 19, "h": 13 }
+    },
+    "926": {
+      "file": {
+        "city": "0wallenw.gif",
+        "dungeon": "0wallenw.gif"
+      },
+      "collidable": true,
+      "z": 10,
+      "floor": 0,
+      "visibility": "wall",
+      "viewport": { "x": 0, "y": 13, "w": 13, "h": 19 }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<configuration base="https://github.com/albertfre/isygate-client-dist/releases/latest/download/">
+  <properties>
+    <!-- metti il main della tua app QUI, esattamente com’è nel codice -->
+    <property key="default.launcher.main.class" value="it.isygate.client.ClientApp"/>
+  </properties>
+
+  <files>
+    <!-- il tuo jar dell’app -->
+    <file path="isygate-client-1.0.2.jar" classpath="true"/>
+
+    <!-- tutte le dipendenze che servono a runtime (presenti come asset nella release) -->
+    <file path="gson-2.10.1.jar" classpath="true"/>
+    <file path="richtextfx-0.11.1.jar" classpath="true"/>
+    <file path="javafx-base-21.0.8.jar" classpath="true"/>
+    <file path="javafx-controls-21.0.8.jar" classpath="true"/>
+    <file path="javafx-fxml-21.0.8.jar" classpath="true"/>
+    <file path="javafx-graphics-21.0.8.jar" classpath="true"/>
+    <file path="javafx-base-21.0.8-win.jar" os="windows" classpath="true"/>
+    <file path="javafx-controls-21.0.8-win.jar" os="windows" classpath="true"/>
+    <file path="javafx-fxml-21.0.8-win.jar" os="windows" classpath="true"/>
+    <file path="javafx-graphics-21.0.8-win.jar" os="windows" classpath="true"/>
+  </files>
+</configuration>
