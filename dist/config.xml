@@ -2,17 +2,18 @@
 <configuration>
   <baseUri>https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/</baseUri>
   <files>
-    <file path="./isygate-client.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/isygate-client-1.0.10.jar" classpath="true"/>
-    <file path="./lib/javafx-swt.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx-swt.jar"/>
-    <file path="./lib/javafx.base.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.base.jar"/>
-    <file path="./lib/javafx.controls.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.controls.jar"/>
-    <file path="./lib/javafx.fxml.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.fxml.jar"/>
-    <file path="./lib/javafx.graphics.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.graphics.jar"/>
-    <file path="./lib/javafx.media.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.media.jar"/>
-    <file path="./lib/javafx.swing.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.swing.jar"/>
-    <file path="./lib/javafx.web.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.web.jar"/>
-    <file path="./lib/update4j-1.5.9.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/update4j-1.5.9.jar"/>
+    <file path="isygate-client.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/isygate-client-1.0.10.jar" classpath="true"/>
+    <file path="lib/javafx-swt.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx-swt.jar"/>
+    <file path="lib/javafx.base.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.base.jar"/>
+    <file path="lib/javafx.controls.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.controls.jar"/>
+    <file path="lib/javafx.fxml.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.fxml.jar"/>
+    <file path="lib/javafx.graphics.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.graphics.jar"/>
+    <file path="lib/javafx.media.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.media.jar"/>
+    <file path="lib/javafx.swing.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.swing.jar"/>
+    <file path="lib/javafx.web.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.web.jar"/>
+    <file path="lib/update4j-1.5.9.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/update4j-1.5.9.jar"/>
   </files>
   <launcher mainClass="it.isygate.client.ClientApp"/>
   <property key="app.version" value="1.0.10"/>
+  <property key="app.dataDir" value="%LOCALAPPDATA%\IsyGateClient"/>
 </configuration>
