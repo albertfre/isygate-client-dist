@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Application version="1.0.6" ts="1760634551083" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/" launch="it.isygate.client.ClientApp">
+<Application version="1.0.7" ts="1760634723017" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/" launch="it.isygate.client.ClientApp">
     <lib file="flowless-0.7.1.jar" checksum="784499484" size="71739"/>
     <lib file="gson-2.10.1.jar" checksum="2443087603" size="283367"/>
     <lib file="istack-commons-runtime-3.0.11.jar" checksum="311692892" size="29877"/>
-    <lib file="isygate-client-1.0.6.jar" checksum="3463814918" size="1305386"/>
+    <lib file="isygate-client-1.0.7.jar" checksum="2920455448" size="1305384"/>
     <lib file="jakarta.activation-1.2.2.jar" checksum="2299001371" size="68453"/>
     <lib file="jakarta.xml.bind-api-2.3.3.jar" checksum="1057609445" size="115638"/>
     <lib file="javafx-base-21.0.8-win.jar" checksum="2152312484" size="753858" os="win"/>
@@ -27,7 +27,7 @@
     <progressLabelStyle>-fx-font-weight: NORMAL;</progressLabelStyle>
     <progressBarStyle>-fx-pref-width: 380; -fx-accent: #2f2f2f;</progressBarStyle>
     <wrapperStyle>-fx-spacing: 5px; -fx-padding: 5px; -fx-border-color: transparent; -fx-background-color: #F5F5F5; -fx-background-radius: 3px; -fx-border-radius: 3px;</wrapperStyle>
-    <parameters>1.0.6</parameters>
+    <parameters>1.0.7</parameters>
     <acceptDowngrade>false</acceptDowngrade>
     <stopOnUpdateErrors>false</stopOnUpdateErrors>
     <lingeringUpdateScreen>false</lingeringUpdateScreen>
