@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Application ts="1760627055839" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/" launch="it.isygate.client.ClientApp">
+<Application ts="1760627580795" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/" launch="it.isygate.client.ClientApp">
     <lib file="flowless-0.7.1.jar" checksum="784499484" size="71739"/>
     <lib file="gson-2.10.1.jar" checksum="2443087603" size="283367"/>
     <lib file="istack-commons-runtime-3.0.11.jar" checksum="311692892" size="29877"/>
-    <lib file="isygate-client-1.0.5.jar" checksum="624761906" size="1305366"/>
+    <lib file="isygate-client-1.0.5.jar" checksum="3549774727" size="1305425"/>
     <lib file="jakarta.activation-1.2.2.jar" checksum="2299001371" size="68453"/>
     <lib file="jakarta.xml.bind-api-2.3.3.jar" checksum="1057609445" size="115638"/>
     <lib file="javafx-base-21.0.8-win.jar" checksum="2152312484" size="753858" os="win"/>
