@@ -2,7 +2,7 @@
 <configuration>
  <baseUri>https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/</baseUri>
  <files>
-    <file path="C:\Users\alber\AppData\Local\IsyGateClient\isygate-client-1.0.10.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/isygate-client-1.0.10.jar" classpath="true" digest="1b4df9a083ce77dca2de7302400e1a1434ea4b76615b1b8640a92702ff77aa3e"/>
+    <file path="C:\Users\alber\AppData\Local\IsyGateClient\isygate-client-1.0.10.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/isygate-client-1.0.10.jar" classpath="true" digest="de4940b0cb3ee52a6b82e8342453304e1bb3ad55830f2f4f719e395a15479234"/>
     <file path="C:\Users\alber\AppData\Local\IsyGateClient\lib\javafx-swt.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx-swt.jar" digest="ca75150f6489879d72c5131218b3641dd391b2a85a04df2dfb1ed1c4e032445a"/>
     <file path="C:\Users\alber\AppData\Local\IsyGateClient\lib\javafx.base.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.base.jar" digest="8539c25fd46cf6408b37433ca86570f5270c490079ad8c0448f0d9ca74ce18ba"/>
     <file path="C:\Users\alber\AppData\Local\IsyGateClient\lib\javafx.controls.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.controls.jar" digest="660df50b84f90fcb5057f50d2fd8aef0fc592a030b2154f7497bca27bdfea8b0"/>
