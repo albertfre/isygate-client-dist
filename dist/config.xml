@@ -14,5 +14,6 @@
     <file path="C:\Users\alber\AppData\Local\IsyGateClient\lib\update4j-1.5.9.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/update4j-1.5.9.jar" digest="dd349db845131c5d0489e650e33dd7ff112d058b7b3673bfd73fa331f94140bc"/>
  </files>
  <launcher mainClass="it.isygate.client.ClientApp"/>
+ <property key="default.launcher.main.class" value="it.isygate.client.ClientApp"/>
  <property key="app.version" value="1.0.10"/>
 </configuration>
