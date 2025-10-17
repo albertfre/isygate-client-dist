@@ -2,16 +2,16 @@
 <configuration>
  <baseUri>https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/</baseUri>
  <files>
-    <file path="%LOCALAPPDATA%\IsyGateClient\isygate-client-1.0.10.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/isygate-client-1.0.10.jar" classpath="true" digest="19c7e34ee044732167f20fc7ac8ce8e8cf8b133011307e1c4ce975291cbea883"/>
-    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx-swt.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx-swt.jar" digest="ca75150f6489879d72c5131218b3641dd391b2a85a04df2dfb1ed1c4e032445a"/>
-    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.base.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.base.jar" digest="8539c25fd46cf6408b37433ca86570f5270c490079ad8c0448f0d9ca74ce18ba"/>
-    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.controls.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.controls.jar" digest="660df50b84f90fcb5057f50d2fd8aef0fc592a030b2154f7497bca27bdfea8b0"/>
-    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.fxml.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.fxml.jar" digest="ce4e849d4605dd4b142163b9c3d6ca0ceddeb5ff1f914bf4cd83693b64ac7708"/>
-    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.graphics.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.graphics.jar" digest="2d84dc14e5f62ee36546f74c96595605fe94d98f8414b8c285a59904953864b1"/>
-    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.media.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.media.jar" digest="a200c395484f7e5c5caba8cc2a9c1189201877cb963be0490a723b0590caac40"/>
-    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.swing.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.swing.jar" digest="c9e907b577d6cf0c4b6f58f90af89a1d272d5321ba9f5c48d03d30ba2ff53152"/>
-    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.web.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/javafx.web.jar" digest="78f57b852b18dac719e0a2bda42bd6c568fb67c404e46327843012fd5e8ef60c"/>
-    <file path="%LOCALAPPDATA%\IsyGateClient\lib\update4j-1.5.9.jar" uri="https://raw.githubusercontent.com/albertfre/isygate-client-dist/main/dist/lib/update4j-1.5.9.jar" digest="dd349db845131c5d0489e650e33dd7ff112d058b7b3673bfd73fa331f94140bc"/>
+    <file path="%LOCALAPPDATA%\IsyGateClient\isygate-client-1.0.10.jar" uri="./isygate-client-1.0.10.jar" classpath="true" digest="19c7e34ee044732167f20fc7ac8ce8e8cf8b133011307e1c4ce975291cbea883"/>
+    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx-swt.jar" uri="lib/javafx-swt.jar" digest="ca75150f6489879d72c5131218b3641dd391b2a85a04df2dfb1ed1c4e032445a"/>
+    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.base.jar" uri="lib/javafx.base.jar" digest="8539c25fd46cf6408b37433ca86570f5270c490079ad8c0448f0d9ca74ce18ba"/>
+    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.controls.jar" uri="lib/javafx.controls.jar" digest="660df50b84f90fcb5057f50d2fd8aef0fc592a030b2154f7497bca27bdfea8b0"/>
+    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.fxml.jar" uri="lib/javafx.fxml.jar" digest="ce4e849d4605dd4b142163b9c3d6ca0ceddeb5ff1f914bf4cd83693b64ac7708"/>
+    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.graphics.jar" uri="lib/javafx.graphics.jar" digest="2d84dc14e5f62ee36546f74c96595605fe94d98f8414b8c285a59904953864b1"/>
+    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.media.jar" uri="lib/javafx.media.jar" digest="a200c395484f7e5c5caba8cc2a9c1189201877cb963be0490a723b0590caac40"/>
+    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.swing.jar" uri="lib/javafx.swing.jar" digest="c9e907b577d6cf0c4b6f58f90af89a1d272d5321ba9f5c48d03d30ba2ff53152"/>
+    <file path="%LOCALAPPDATA%\IsyGateClient\lib\javafx.web.jar" uri="lib/javafx.web.jar" digest="78f57b852b18dac719e0a2bda42bd6c568fb67c404e46327843012fd5e8ef60c"/>
+    <file path="%LOCALAPPDATA%\IsyGateClient\lib\update4j-1.5.9.jar" uri="lib/update4j-1.5.9.jar" digest="dd349db845131c5d0489e650e33dd7ff112d058b7b3673bfd73fa331f94140bc"/>
  </files>
  <launcher mainClass="it.isygate.client.ClientApp"/>
  <property key="app.version" value="1.0.10"/>
